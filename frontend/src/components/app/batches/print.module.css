@@ -1,0 +1,301 @@
+/* Print-friendly styles for batch evidence reports */
+
+.printRoot {
+  min-height: 100vh;
+  background: white;
+}
+
+.printContent {
+  max-width: 210mm; /* A4 width */
+  margin: 0 auto;
+  padding: 20mm;
+  background: white;
+  color: #000;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 11pt;
+  line-height: 1.6;
+}
+
+/* Report Header */
+.reportHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 3px solid #2563eb;
+}
+
+.reportTitle {
+  font-size: 24pt;
+  font-weight: bold;
+  margin: 0 0 5px 0;
+  color: #1e40af;
+}
+
+.reportSubtitle {
+  font-size: 11pt;
+  color: #64748b;
+  margin: 0;
+}
+
+.logo {
+  font-size: 20pt;
+  font-weight: bold;
+  color: #2563eb;
+}
+
+/* Meta Row */
+.metaRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  padding: 15px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 10pt;
+}
+
+.metaRow strong {
+  font-weight: 600;
+  color: #475569;
+}
+
+/* KPI Cards */
+.kpiRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.kpiCard {
+  padding: 15px;
+  background: #f8fafc;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.kpiLabel {
+  font-size: 9pt;
+  color: #64748b;
+  margin-bottom: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.kpiValue {
+  font-size: 22pt;
+  font-weight: bold;
+  margin-bottom: 5px;
+  line-height: 1.2;
+}
+
+.kpiSubtext {
+  font-size: 9pt;
+  color: #64748b;
+}
+
+/* Sections */
+.section {
+  margin-bottom: 25px;
+}
+
+.sectionTitle {
+  font-size: 14pt;
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: #1e293b;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 5px;
+}
+
+.paragraph {
+  margin-bottom: 12px;
+  text-align: justify;
+  color: #334155;
+}
+
+.list {
+  margin-left: 20px;
+  margin-bottom: 12px;
+  color: #334155;
+}
+
+.list li {
+  margin-bottom: 6px;
+}
+
+/* Tables */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 15px;
+  font-size: 10pt;
+  break-inside: avoid;
+}
+
+.table thead {
+  background: #f1f5f9;
+  border-bottom: 2px solid #cbd5e1;
+}
+
+.table th {
+  padding: 10px;
+  text-align: left;
+  font-weight: 600;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+}
+
+.table td {
+  padding: 8px 10px;
+  border: 1px solid #e2e8f0;
+  color: #334155;
+}
+
+.table tbody tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+/* Badges */
+.badge {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 8pt;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badgeHigh {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+}
+
+.badgeMedium {
+  background: #fed7aa;
+  color: #9a3412;
+  border: 1px solid #fdba74;
+}
+
+.badgeLow {
+  background: #fef3c7;
+  color: #854d0e;
+  border: 1px solid #fde047;
+}
+
+.badgeNormal {
+  background: #d1fae5;
+  color: #065f46;
+  border: 1px solid #6ee7b7;
+}
+
+/* Recommendation Box */
+.recommendation {
+  padding: 15px;
+  background: #fef3c7;
+  border-left: 4px solid #f59e0b;
+  border-radius: 4px;
+  font-weight: 500;
+  color: #78350f;
+}
+
+/* Footer */
+.footer {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 2px solid #e2e8f0;
+  text-align: center;
+  font-size: 9pt;
+  color: #64748b;
+}
+
+/* Print-specific rules */
+@media print {
+  .printRoot {
+    background: white;
+  }
+
+  .printContent {
+    max-width: 100%;
+    margin: 0;
+    padding: 15mm 20mm;
+  }
+
+  /* Hide screen-only elements */
+  .no-print {
+    display: none !important;
+  }
+
+  /* Remove shadows and backgrounds */
+  .kpiCard,
+  .metaRow {
+    box-shadow: none !important;
+    border: 1px solid #000 !important;
+  }
+
+  /* Ensure black text for print */
+  body {
+    color: #000;
+    background: white;
+  }
+
+  /* Page break control */
+  .page-break {
+    page-break-before: always;
+  }
+
+  .section {
+    page-break-inside: avoid;
+  }
+
+  .table {
+    page-break-inside: avoid;
+  }
+
+  .table thead {
+    display: table-header-group;
+  }
+
+  .table tbody {
+    display: table-row-group;
+  }
+
+  /* Ensure proper link handling */
+  a[href]:after {
+    content: none !important;
+  }
+
+  /* Force color printing for badges */
+  .badge {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .kpiValue {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+/* A4 page setup */
+@page {
+  size: A4;
+  margin: 15mm 20mm;
+}
+
+/* Screen view improvements */
+@media screen {
+  .printContent {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+}

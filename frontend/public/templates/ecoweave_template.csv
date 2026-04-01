@@ -1,0 +1,6 @@
+batch_id,shift_date,shift_name,production_volume_kg,chemical_usage_kg,etp_runtime_min,electricity_kwh,chemical_invoice_bdt,etp_cost_bdt,notes
+B-2401,2026-02-10,Night Shift A,850,72,0,95,57600,15000,High production night shift
+B-2402,2026-02-10,Day Shift B,650,48,85,92,38400,12000,Normal operation
+B-2403,2026-02-11,Night Shift B,920,88,15,98,70400,15000,Rush order - expedited
+B-2404,2026-02-11,Day Shift A,420,32,65,68,25600,10000,Standard batch
+B-2405,2026-02-12,Morning Shift,780,65,25,82,52000,14000,Equipment maintenance completed
